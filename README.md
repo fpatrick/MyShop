@@ -1,2 +1,2 @@
 # MyShop
-My Shop eCommerce Demo Class
+My Shop eCommerce Demo Lesson
