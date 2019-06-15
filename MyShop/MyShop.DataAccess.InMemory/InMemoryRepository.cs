@@ -1,4 +1,5 @@
-﻿using MyShop.Core.Models;
+﻿using MyShop.Core.Contracts;
+using MyShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyShop.DataAccess.InMemory
 {
-    public class InMemoryRepository<Generic> where Generic : BaseEntity //Add <> to create a generic class and inside <> you can put anything ----- Whenever we pass a object it must be the type of BaseEntity
+    public class InMemoryRepository<Generic> : IRepository<Generic> where Generic : BaseEntity //Add <> to create a generic class and inside <> you can put anything ----- Whenever we pass a object it must be the type of BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
         List<Generic> items;
@@ -66,7 +67,7 @@ namespace MyShop.DataAccess.InMemory
             return items.AsQueryable();
         }
 
-        public void Delete (string Id)
+        public void Delete(string Id)
         {
             Generic genericToDelete = items.Find(i => i.Id == Id);
 
