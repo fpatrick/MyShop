@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string Id { get; set; }
         [StringLength(20)] //Maximum caracters name will have
         [DisplayName("Product Name")] //To display name in scaffolding
         public string Name { get; set; }
@@ -20,9 +19,9 @@ namespace MyShop.Core.Models
         public string Category { get; set; }
         public string Image { get; set; }
 
-        public Product() //Construct to automatic generate a Id when instance a product (some database do it by itself, but coding may give more flexbility)
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+        //public Product() //Construct to automatic generate a Id when instance a product (some database do it by itself, but coding may give more flexbility)
+        //{
+        //    this.Id = Guid.NewGuid().ToString();
+        //}
     }
 }
