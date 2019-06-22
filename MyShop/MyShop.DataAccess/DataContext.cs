@@ -18,7 +18,8 @@ namespace MyShop.DataAccess
 
         public DbSet<Product> Products { get; set; }  //Tells which models will be stored in tables, because we dont want to store our view models in the database
         public DbSet<ProductCategory> ProductCategories { get; set; }
-
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         //Next we go to View > Other Windows > Package Manager Console.   Change default projetc to DataAccess.SQL
         //Right click WebUI and click Set as Startup Project
         //On console 1: Enable-Migrations; 2: Add-Migration Initial (can be any name); 3: Update-Database
