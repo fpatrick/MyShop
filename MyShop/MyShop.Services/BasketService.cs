@@ -111,7 +111,7 @@ namespace MyShop.Services
                     (
                         from b in basket.BasketItems //from b (just inline variable) "IN" than we tell what is the first table we wish to query
                         join p in productContext.Collection() //join p and another list, this case produtctcontext that owen products in our database
-                        on b.Id equals p.Id  //we than tell what we want to join the 2 tables on
+                        on b.ProductId equals p.Id  //we than tell what we want to join the 2 tables on
                         select new BasketItemViewModel() //create new object and say what items will come from where
                         {
                             Id = b.Id,
