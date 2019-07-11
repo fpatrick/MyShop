@@ -21,6 +21,9 @@ namespace MyShop.DataAccess
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
         //Next we go to View > Other Windows > Package Manager Console.   Change default projetc to DataAccess.SQL
         //Right click WebUI and click Set as Startup Project
         //On console 1: Enable-Migrations; 2: Add-Migration Initial (can be any name); 3: Update-Database
